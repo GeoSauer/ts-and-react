@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 
+import "./NewTodo.css";
 // could also be an interface (and probably should in order to maintain convention)
 type NewTodoProps = {
   onAddTodo: (todoText: string) => void;
