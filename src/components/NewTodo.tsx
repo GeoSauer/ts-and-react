@@ -12,7 +12,16 @@ const NewTodo: React.FC<NewTodoProps> = (props) => {
   const todoSubmitHandler = (event: React.FormEvent) => {
     event.preventDefault();
     const enteredText = textInputRef.current!.value; //telling TS that when this function fires there will for sure be a value
+    if (!enteredText) {
+      alert("Please enter a Todo!");
+      return;
+    }
     props.onAddTodo(enteredText); //will now only accept a string based on the type on line 4 (in compilation at least, not protected at runtime)
+
+    if (textInputRef.current) {
+      //resets the form if it has content
+      textInputRef.current.value = "";
+    }
   };
 
   return (
