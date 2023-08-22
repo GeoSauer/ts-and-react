@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
 import "./NewTodo.css";
-// could also be an interface (and probably should in order to maintain convention)
+// could also be an interface (and probably should be in order to maintain convention)
 type NewTodoProps = {
   onAddTodo: (todoText: string) => void;
 };
@@ -26,7 +26,7 @@ const NewTodo: React.FC<NewTodoProps> = (props) => {
 
   return (
     <form onSubmit={todoSubmitHandler}>
-      <div>
+      <div className="form-control">
         <label htmlFor="todo-text">Todo Text</label>
         {/* //linking the input element to the ref defined above */}
         <input type="text" id="todo-text" ref={textInputRef}></input>
